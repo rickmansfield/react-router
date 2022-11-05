@@ -9,7 +9,7 @@ function Navbar() {
         <div className='ui right floated header'>
           <button className='ui button'><Link to='/'>Home</Link></button>
           <button className='ui button'><NavLink to='/about'>About</NavLink></button>
-          <button className='ui button'><NavLink to='/contact'>Contact</NavLink></button>
+          <button className='ui button'><NavLink to='/contact'>Contacts</NavLink></button>
         </div>
       </nav>
       </div>
