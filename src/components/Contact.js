@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
+  let navigate = useNavigate();
+  setTimeout(() => {
+    navigate('/about');
+  }, 2000);
   return (
     <div
       className="ui rasied very padded text container segment"
