@@ -15,7 +15,7 @@ function Contact() {
   // }, [params.id]);
   return (
     <div className="Contacts">
-      <Modal />
+      {/* <Modal /> */}
 
       <div
         className="ui rasied very padded text container segment"
