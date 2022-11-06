@@ -1,14 +1,16 @@
 import React from "react";
 import classes from "../styling/modal.module.css";
+import Modal from "./Modal";
 
 function About() {
+  
   return (
     <div>
-      
+      <Modal />
         <div className={`${classes.modal}`}>
           <div className={`${classes.modalContent}`}>
             <h3>About Modal</h3>
-            <p>
+          <p>
               This is a simple React app to manage contacts. It uses React
               Context API for state management.
             </p>
