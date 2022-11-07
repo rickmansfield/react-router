@@ -8,7 +8,7 @@ function About() {
         <div className={`${classes.modalContent}`}>
           <h3>About Modal</h3>
           <p>
-            This is a simple React app to manage contacts. It uses React Context
+            This is a simple React app to manage productss. It uses React Context
             API for state management.
           </p>
         </div>
