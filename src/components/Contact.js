@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 import Modal from "./Modal";
-function Contact() {
-
+import { connect } from "react-redux";
+function Contact(props) {
+  console.log('props', props.cards);
+ 
   // let navigate = useNavigate();
   // setTimeout(() => {
   //   navigate('/about');
@@ -13,26 +15,34 @@ function Contact() {
   //   console.log("ID", params.id);
   //   return () => {};
   // }, [params.id]);
+
+
+  const cards = props.cards;
   return (
     <div className="Contacts">
-      <Modal />
-
-      <div
-        className="ui rasied very padded text container segment"
-        style={{ marginTop: "80px" }}
-      >
-        <Link to='/card/Rick' className="ui header">Rick</Link>
-        <p>Some Text</p>
-      </div>
-      <div
-        className="ui rasied very padded text container segment"
-        style={{ marginTop: "80px" }}
-      >
-        <Link to='/card/Sara' className="ui header">Sara</Link>
-        <p>Some Text</p>
-      </div>
+      {/* <Modal /> */}
+      {cards.map((cards) => {
+        return (
+          <div
+            className="ui rasied very padded text container segment"
+            style={{ marginTop: "80px" }}
+            key={cards.id}
+          >
+            <Link to={`/${cards.title}`} className="ui header" >
+              {cards.title}
+            </Link>
+            <p>{ cards.description }</p>
+          </div>
+        );
+      })};
     </div>
   );
-}
 
-export default Contact;
+}
+const mapStateToProps = (state) => ({
+  state: state,
+  cards: state.rootReducer.cards,
+  
+});
+
+export default connect(mapStateToProps)(Contact);
