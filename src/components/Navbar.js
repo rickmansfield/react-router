@@ -9,7 +9,7 @@ function Navbar() {
         <div className='ui right floated header'>
           <button className='ui button'><Link to='/'>Home</Link></button>
           <button className='ui button'><NavLink to='/about'>About</NavLink></button>
-          <button className='ui button'><NavLink to='/contact'>Contacts</NavLink></button>
+          <button className='ui button'><NavLink to='/products'>Products</NavLink></button>
         </div>
       </nav>
       </div>
@@ -18,4 +18,4 @@ function Navbar() {
 
 export default Navbar
 
-// notice that Link prevents a server side request. NavLink is used to style the active link. i. e. if you inspect the About link, you will see that it has a class of active. This is because the url is /about. If you change the url to /contact, the Contact link will have a class of active. This is because the url is /contact. If you change the url to /, the Home link will have a class of active. This is because the url is /. When you want to have styling unique to the "active" button then NavLink makes it possible. If you want to have the same styling for all buttons, then Link is fine. 
+// notice that Link prevents a server side request. NavLink is used to style the active link. i. e. if you inspect the About link, you will see that it has a class of active. This is because the url is /about. If you change the url to /products, the products link will have a class of active. This is because the url is /products. If you change the url to /, the Home link will have a class of active. This is because the url is /. When you want to have styling unique to the "active" button then NavLink makes it possible. If you want to have the same styling for all buttons, then Link is fine. 

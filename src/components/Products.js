@@ -3,7 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 import Modal from "./Modal";
 import { connect } from "react-redux";
-function Contact(props) {
+
+function Products(props) {
   console.log('props', props.cards);
  
   // let navigate = useNavigate();
@@ -19,7 +20,7 @@ function Contact(props) {
 
   const cards = props.cards;
   return (
-    <div className="Contacts">
+    <div className="Products">
       {/* <Modal /> */}
       {cards.map((cards) => {
         return (
@@ -28,7 +29,7 @@ function Contact(props) {
             style={{ marginTop: "80px" }}
             key={cards.id}
           >
-            <Link to={`/${cards.title}`} className="ui header" >
+            <Link to={`/card/${cards.id}`} className="ui header" >
               {cards.title}
             </Link>
             <p>{ cards.description }</p>
@@ -45,4 +46,4 @@ const mapStateToProps = (state) => ({
   
 });
 
-export default connect(mapStateToProps)(Contact);
+export default connect(mapStateToProps)(Products);
