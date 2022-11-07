@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 import Modal from "./Modal";
 import { connect } from "react-redux";
+
 function Products(props) {
   console.log('props', props.cards);
  
@@ -19,7 +20,7 @@ function Products(props) {
 
   const cards = props.cards;
   return (
-    <div className="Productss">
+    <div className="Products">
       {/* <Modal /> */}
       {cards.map((cards) => {
         return (
@@ -28,7 +29,7 @@ function Products(props) {
             style={{ marginTop: "80px" }}
             key={cards.id}
           >
-            <Link to={`/${cards.title}`} className="ui header" >
+            <Link to={`/card/${cards.id}`} className="ui header" >
               {cards.title}
             </Link>
             <p>{ cards.description }</p>
