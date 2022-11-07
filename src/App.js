@@ -15,7 +15,7 @@ function App() {
           <Route path="Home" element={<Home />} />
           <Route path="About" element={<About />} />
           <Route path="Products" element={<Products />} />
-          <Route path='Card/:user' element={<Card />} />
+          <Route path='Card/:id' element={<Card /> } />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </div>
