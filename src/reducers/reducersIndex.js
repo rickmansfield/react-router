@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import ads from "./cardReducer";
+import cards from "./cardReducer";
+
 // import {useState} from 'react';
 // const [card, setCard] = useState([]);
 // setCard(
@@ -24,9 +25,10 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
+  console.log('action', action);
   return state;
 };
 export default combineReducers({
-  ads,
   rootReducer,
+  cards,
 });

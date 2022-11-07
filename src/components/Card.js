@@ -1,32 +1,38 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { connect} from 'react-redux';
-
-
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { deleteCard } from "../actions/actionsIndex";
 function Card(props) {
-  console.log('props in Card', props);
-  let id = useParams();
-  console.log('id', id);
-  
+  console.log("props in Card", props);
+  let urlid = useParams();
+  console.log("id", urlid);
+  const card = useSelector((state) => {
+    return state.rootReducer.cards.find(
+      (card) => card.id === parseInt(urlid.id)
+    );
+  });
+  const { title, description } = card;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const onButtonClick = () => {
+    let id = card.id;
+    dispatch({ type: "DELETE_CARD", id });
+    navigate("/Products");
+  };
 
-  const card = props.cards.find((card) => card.id === parseInt(id.id));
-  
   return (
-    <div className='ui raised very padded text container segment'
-    style={{marginTop: '80px'}}>
-      <h3 className='ui header'>
-        {card.title}
-      </h3>
-      <p>
-        {card.description}
-      </p>
+    <div
+      className="ui raised very padded text container segment"
+      style={{ marginTop: "80px" }}
+    >
+      <h3 className="ui header">{title}</h3>
+      <p>{description}</p>
+      <button
+        className="ui primary right floated button"
+        onClick={onButtonClick}
+      ></button>
     </div>
-  )
-};
+  );
+}
 
-const mapStateToProps = (state) => ({
-  state: state,
-  cards: state.rootReducer.cards,
-});
-
-export default connect(mapStateToProps)(Card)
+export default Card;

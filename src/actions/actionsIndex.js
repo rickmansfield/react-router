@@ -1,7 +1,7 @@
 export const FETCH_ADS_PENDING = "FETCH_ADS_PENDING";
 export const FETCH_ADS_SUCCESS = "FETCH_ADS_SUCCESS";
 export const FETCH_ADS_ERROR = "FETCH_ADS_ERROR";
-
+export const DELETE_CARD = "DELETE_CARD";
 /* ADS ****************************/
 
 export function fetchAdsPending() {
@@ -24,5 +24,12 @@ export function fetchAdsError(error) {
     type: FETCH_ADS_ERROR,
     pending: false,
     error: error,
+  };
+}
+
+export function deleteCard(id) {
+  return {
+    type: DELETE_CARD,
+    id: id,
   };
 }
